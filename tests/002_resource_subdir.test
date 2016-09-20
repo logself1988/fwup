@@ -64,3 +64,5 @@ dd if=$TESTFILE_1K seek=0 of=$WORK/expected.bin
 dd if=$TESTFILE_1K seek=4 of=$WORK/expected.bin
 dd if=$TESTFILE_1K seek=8 of=$WORK/expected.bin
 diff $IMGFILE $WORK/expected.bin
+
+cleanup

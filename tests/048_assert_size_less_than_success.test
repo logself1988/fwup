@@ -28,3 +28,4 @@ $FWUP_CREATE -c -f $CONFIG -o $FWFILE
 # old versions of fwup.
 check_meta_conf
 
+cleanup

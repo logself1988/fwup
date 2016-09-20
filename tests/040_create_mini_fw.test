@@ -36,3 +36,5 @@ $FWUP_APPLY -a -d $IMGFILE -i $FWFILE -t complete
 rm -fr $UNZIPDIR
 unzip -q $MINIFW -d $UNZIPDIR
 check_meta_conf
+
+cleanup

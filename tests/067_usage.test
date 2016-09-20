@@ -18,3 +18,5 @@ $FWUP_CREATE --help > $ACTUAL_OUTPUT_HELP_ARG || true
 grep "Usage: " $ACTUAL_OUTPUT_NO_ARGS
 grep "Usage: " $ACTUAL_OUTPUT_BAD_ARG
 grep "Usage: " $ACTUAL_OUTPUT_HELP_ARG
+
+cleanup

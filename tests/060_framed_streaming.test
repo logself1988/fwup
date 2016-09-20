@@ -28,3 +28,5 @@ cat $FWFILE | $FRAMING_HELPER -n 50 -e \
 # The firmware file is equivalent to the following dd call
 dd if=$TESTFILE_1K seek=1 of=$WORK/check.bin 2>/dev/null
 diff $WORK/check.bin $IMGFILE
+
+cleanup

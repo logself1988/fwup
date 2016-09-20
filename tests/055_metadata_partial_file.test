@@ -7,6 +7,7 @@
 #
 
 . ./common.sh
+create_15M_file
 
 EXPECTED_OUTPUT=$WORK/expected_output
 ACTUAL_OUTPUT=$WORK/actual_output
@@ -41,3 +42,5 @@ dd if=$FWFILE of=$FWFILE.truncated bs=1 count=512 2>/dev/null
 $FWUP_APPLY -i $FWFILE.truncated -m | grep -v "meta-creation-date" | grep -v "meta-fwup-version" > $ACTUAL_OUTPUT
 
 diff -w $EXPECTED_OUTPUT $ACTUAL_OUTPUT
+
+cleanup

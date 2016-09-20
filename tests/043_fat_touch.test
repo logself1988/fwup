@@ -53,3 +53,4 @@ EOF
 mdir -i $WORK/fwup.img@@32256 > $ACTUAL_OUTPUT
 diff -w $EXPECTED_OUTPUT $ACTUAL_OUTPUT
 
+cleanup

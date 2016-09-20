@@ -5,6 +5,7 @@
 #
 
 . ./common.sh
+cleanup
 
 VERSION=$($FWUP_CREATE --version)
 

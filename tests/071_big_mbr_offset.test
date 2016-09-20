@@ -27,3 +27,5 @@ EOF
 
 # Try to create the firmware image
 $FWUP_CREATE -c -f $CONFIG -o $FWFILE
+
+cleanup

@@ -54,4 +54,4 @@ if $FWUP -V -i $WORK/imposter.fw; then
     exit 1
 fi
 
-
+cleanup

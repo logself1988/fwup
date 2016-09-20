@@ -6,8 +6,6 @@
 # 2 TB of disk space to run, since the file should be sparce.
 #
 
-. ./common.sh
-
 # No sparse file support on OSX, so skip
 if [[ "$OSTYPE" == "darwin"* ]]; then
     exit 0
@@ -24,6 +22,8 @@ fi
 if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
     exit 0
 fi
+
+. ./common.sh
 
 cat >$CONFIG <<EOF
 file-resource subdir/TEST {
@@ -45,3 +45,5 @@ dd if=$TESTFILE_150K seek=4300000000 of=$WORK/check.bin conv=sync 2>/dev/null
 # diffing the files takes too long, so skip to the end
 # where the interesting stuff is
 cmp $WORK/check.bin $IMGFILE 2200000000000 2200000000000
+
+cleanup

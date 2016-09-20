@@ -10,6 +10,7 @@
 #
 
 . ./common.sh
+create_15M_file
 
 cat >$CONFIG <<EOF
 define(BOOT_PART_OFFSET, 63)
@@ -158,3 +159,5 @@ diff $TESTFILE_150K $WORK/actual.3.bin
 diff $TESTFILE_1K $WORK/actual.4.bin
 
 echo Success!
+
+cleanup

@@ -30,3 +30,5 @@ if $FWUP_CREATE -c -f $CONFIG -o $FWFILE; then
     echo "Expected creation to fail due to BOOT_PART_OFFSET being too big."
     exit 1
 fi
+
+cleanup

@@ -44,3 +44,5 @@ diff -w $EXPECTED_OUTPUT $ACTUAL_OUTPUT.trimmed
 # Check the type
 cat $ACTUAL_OUTPUT.noframing | (dd bs=1 count=2 2>/dev/null) > $ACTUAL_OUTPUT.type
 diff -w $EXPECTED_OUTPUT.type $ACTUAL_OUTPUT.type
+
+cleanup

@@ -85,3 +85,4 @@ EOF
 dd if=$IMGFILE skip=63 count=1 2>/dev/null >$ACTUAL_OUTPUT
 diff $EXPECTED_OUTPUT $ACTUAL_OUTPUT
 
+cleanup

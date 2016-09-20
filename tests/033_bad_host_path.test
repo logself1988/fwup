@@ -21,3 +21,5 @@ if $FWUP_CREATE -c -f $CONFIG -o $FWFILE; then
     echo "This should have failed"
     exit 1
 fi
+
+cleanup

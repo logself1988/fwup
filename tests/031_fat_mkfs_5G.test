@@ -5,8 +5,6 @@
 # in the FAT code.
 #
 
-. ./common.sh
-
 # No sparse file support on OSX, so skip
 if [[ "$OSTYPE" == "darwin"* ]]; then
     exit 0
@@ -16,6 +14,8 @@ fi
 if [[ -d "/mnt/c/Users" ]]; then
     exit 0
 fi
+
+. ./common.sh
 
 cat >$CONFIG <<EOF
 define(BOOT_PART_OFFSET, 63)
@@ -43,4 +43,6 @@ $FWUP_APPLY -a -d $IMGFILE -i $FWFILE -t complete
 
 # MTOOLS_SKIP_CHECK=1 can normally be used, but since this is
 # the most fundamental of FAT checks, we're trying to leave it off.
-mdir -i work/fwup.img@@32256
+mdir -i $WORK/fwup.img@@32256
+
+cleanup

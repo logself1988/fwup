@@ -32,3 +32,5 @@ if $FWUP_APPLY -a -d $IMGFILE -i $WORK/imposter.fw -t complete; then
     echo "This should have failed"
     exit 1
 fi
+
+cleanup

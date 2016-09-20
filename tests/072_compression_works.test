@@ -29,3 +29,5 @@ if (( $FWFILE_SIZE > 1000 )); then
     echo "Firmware size larger than expected: $FWFILE_SIZE"
     exit 1
 fi
+
+cleanup

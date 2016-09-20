@@ -39,3 +39,4 @@ diff $TESTFILE_1K.x2 $UNZIPDIR/data/TEST
 $FWUP_APPLY -a -d $IMGFILE -i $FWFILE -t complete
 diff $IMGFILE $TESTFILE_1K.x2
 
+cleanup

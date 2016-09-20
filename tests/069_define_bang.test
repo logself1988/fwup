@@ -23,3 +23,5 @@ TEST_DEFINE=define_orig TEST_DEFINE_BANG=define_bang_orig $FWUP_CREATE -c -f $CO
 
 # Check that the zip file was created as expected
 check_meta_conf
+
+cleanup

@@ -8,3 +8,5 @@
 
 # Yes, this is a weak test, but it shouldn't crash
 $FWUP_CREATE --detect
+
+cleanup

@@ -33,3 +33,5 @@ diff $WORK/check.bin $IMGFILE
 #rm $IMGFILE
 #$FWUP_APPLY -a -d $IMGFILE -i - -t complete < $FWFILE
 #diff $WORK/check.bin $IMGFILE
+
+cleanup

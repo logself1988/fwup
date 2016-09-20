@@ -18,3 +18,5 @@ if $FWUP_CREATE -c -f $CONFIG -o $FWFILE; then
     echo "Expected assert-size-gte to fail?"
     exit 1
 fi
+
+cleanup

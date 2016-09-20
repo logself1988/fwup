@@ -36,3 +36,5 @@ if $FWUP_APPLY -a -d $READONLY_OUTPUT_FILE -i $FWFILE -t complete; then
     echo "Expected error when writing to a readonly file?"
     exit 1
 fi
+
+cleanup

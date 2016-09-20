@@ -42,7 +42,7 @@ if [ -z $FWUP_CREATE ]; then FWUP_CREATE=$FWUP_DEFAULT; fi
 if [ -z $FWUP_APPLY ]; then FWUP_APPLY=$FWUP_DEFAULT; fi
 FRAMING_HELPER=$TESTS_DIR/framing-helper$EXEEXT
 
-WORK=$TESTS_DIR/work
+WORK=$(mktemp -d $TESTS_DIR/work.XXX)
 RESULTS=$WORK/results
 
 [ -e $FWUP_CREATE ] || ( echo "Can't find $FWUP_CREATE"; exit 1 )
@@ -57,8 +57,6 @@ EXPECTED_META_CONF=$WORK/meta.conf.expected
 TRIMMED_META_CONF=$WORK/meta.conf.trimmed
 
 # Setup the directories
-rm -fr $WORK
-mkdir -p $WORK
 mkdir -p $UNZIPDIR
 
 unzip_fw() {
@@ -81,6 +79,10 @@ check_meta_conf() {
     diff -w $EXPECTED_META_CONF $TRIMMED_META_CONF
 }
 
+cleanup() {
+    rm -fr $WORK
+}
+
 # Test input files
 
 # These files contain random data so that it is possible to
@@ -94,9 +96,11 @@ TESTFILE_1K_CORRUPT=$TESTS_DIR/1K-corrupt.bin
 TESTFILE_150K=$TESTS_DIR/150K.bin
 
 # Generated test data
-TESTFILE_15M=$TESTS_DIR/15M.bin
-if [ ! -e $TESTFILE_15M ]; then
-    for i in {1..100}; do
-        cat $TESTFILE_150K >> $TESTFILE_15M
-    done
-fi
+create_15M_file() {
+    if [ ! -e $TESTFILE_15M ]; then
+        for i in {1..100}; do
+            cat $TESTFILE_150K >> $TESTFILE_15M
+        done
+    fi
+}
+TESTFILE_15M=$WORK/15M.bin

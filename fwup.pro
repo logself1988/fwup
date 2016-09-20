@@ -144,4 +144,30 @@ DISTFILES += \
     scripts/build_pkg.sh \
     scripts/ci_build.sh \
     scripts/ci_install_deps.sh \
-    scripts/download_deps.sh
+    scripts/download_deps.sh \
+    tests/052_file_concatenation.test \
+    tests/053_framed_progress.test \
+    tests/054_framed_metadata.test \
+    tests/055_metadata_partial_file.test \
+    tests/056_list_tasks.test \
+    tests/057_list_tasks_empty.test \
+    tests/058_framed_list_tasks.test \
+    tests/059_framed_error.test \
+    tests/060_framed_streaming.test \
+    tests/061_framed_partial_metadata.test \
+    tests/062_long_meta_conf.test \
+    tests/063_detect.test \
+    tests/064_mbr_bootcode.test \
+    tests/065_fat_mkdir.test \
+    tests/066_fat_attrib.test \
+    tests/067_usage.test \
+    tests/068_readonly_output_error.test \
+    tests/069_define_bang.test \
+    tests/070_bad_mbr_offset.test \
+    tests/071_big_mbr_offset.test \
+    tests/072_compression_works.test \
+    tests/073_multistep_fat.test \
+    tests/074_fat_cache_fail.test \
+    tests/075_big_fat_fs.test \
+    tests/076_utf8_metadata.test \
+    tests/077_fat_empty_file.test
